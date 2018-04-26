@@ -16,19 +16,21 @@ export default new Router({
     },
     {
     	path : '/Hi',
-    	name : 'Hi',
     	component : Hi,
     	children:[
     		{
     			path : '/',
+                name : 'Hello/Hi',
     			component : Hi
     		},
     		{
     			path : 'hi1',
+                name : 'hi1',
     			component : Hi1
     		},
     		{
     			path : 'hi2',
+                name : 'hi2',
     			component : Hi2
     		}
     	]
@@ -37,3 +39,4 @@ export default new Router({
 })
 
 //一个坑 子路由中的path不需要'/'
+//第二个坑 只要有路由有子路由的,不需要写name,只需要在子路由中写name
