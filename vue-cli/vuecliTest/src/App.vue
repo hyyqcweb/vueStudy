@@ -1,6 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <div>
+      <router-link to="/">首页</router-link>|
+      <router-link to="/hi">Hi</router-link>|
+      <router-link to="/hi/hi1">Hi1</router-link>|
+      <router-link to="/hi/hi2">Hi2</router-link>
+    </div>    
     <router-view/>
   </div>
 </template>
