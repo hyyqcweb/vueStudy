@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-bind</title>
+	<script src="../assets/js/vue.js"></script>
+	<style type="text/css">
+		.classA{
+			color: red;
+		}
+		.classB{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>v-bind</h1>
+	<hr>
+	<div id="app">
+		<!-- v-bind 缩写是: 作用主要是操作属性 -->
+		<p><img v-bind:src="imgSrc"></p>
+		<p><a :href="hrefSrc" target="_blank">跳转</a></p>
+		<hr>
+		<div :class="className">1 绑定Class</div>
+		<div :class="{classA:isTrue}">2 绑定Class中的判断</div>
+		<div :class="{classA,classB}">3 绑定Class中的数组</div>
+		<div :class="isTrue?classA:classB">4 绑定Class中的三元运算符</div>
+		<hr>
+		<div>
+			<input type="checkbox" id="isTrue" v-model="isTrue" name="">
+			<label for="isTrue">isTrue : {{isTrue}}</label>	
+		</div>
+		<hr>
+		<div :style="{color:red,fontSize:font}">5 绑定行内样式</div>
+		<div :style="objectStyle">6 绑定行内对象</div>
+	</div>
+	<script>
+		let app = new Vue({
+			el : '#app',
+			data : {
+				msg : 'hello world',
+				imgSrc : 'https://box.bdimg.com/static/fisp_static/common/img/searchbox/logo_news_276_88_1f9876a.png',
+				hrefSrc : 'http://news.baidu.com',
+				className : 'classA',
+				isTrue : true,
+				classA : 'classA',
+				classB : 'classB',
+				red : 'red',
+				font : '20px',
+				objectStyle : {
+					color : 'green',
+					fontSize : '20px'
+				}
+			}
+		})
+	</script>
+</body>
+</html>

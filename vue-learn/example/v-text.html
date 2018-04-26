@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-text&v-html</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-text & v-html</h1>
+	<hr>
+	<div id="app">
+		<span v-text="msg"></span>
+		<!-- v-text 的好处就是当网速慢或者js出错的时候,不会显示span标签 -->
+		<span v-html="msgHtml"></span>
+		<!-- v-html 非常危险,容易引起xxs攻击,必须在安全的环境才能用 -->
+	</div>
+	<script>
+		let app = new Vue({
+			el : '#app',
+			data:{
+				msg : 'hello',
+				msgHtml : '<h2>hello world</h2>'
+			},
+		})
+	</script>
+</body>
+</html>

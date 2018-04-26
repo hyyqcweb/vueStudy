@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>example04 slot</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>example04 slot</h1>
+	<br>
+	<div id="app">
+		<hyyqc>
+			<!-- 接收模板传过来的值 -->
+			<span slot="blogUrl">{{hyyqcDate.blogUrl}}</span>
+			<span slot="netName">{{hyyqcDate.netName}}</span>
+			<span slot="skill">{{hyyqcDate.skill}}</span>
+		</hyyqc>
+	</div>
+
+	<!-- 定义模板组件 -->
+	<template id="tep">
+		<div>
+			<!-- 使用slot便签接收值  -->
+			<p>博客地址 : <slot name="blogUrl"></slot></p>
+			<p>网名 : <slot name="netName"></slot></p>
+			<p>技术 : <slot name="skill"></slot></p>
+		</div>
+	</template>
+	<script>
+		let hyyqc = {
+			template : '#tep'
+		}
+		let app = new Vue({
+			el : '#app',
+			data : {
+				hyyqcDate:{
+					blogUrl : 'http://hyyqc.github.io',
+					netName : 'hyyqc',
+					skill : 'web前端' 
+				}
+			},
+			components : {
+				'hyyqc' : hyyqc
+			}
+		})
+	</script>
+</body>
+</html>

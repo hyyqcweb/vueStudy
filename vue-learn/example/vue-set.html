@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-set 全局操作</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>Vue-set 全局操作</h1>
+	<hr>
+	<div id="app">
+		{{count}}
+		<ul>
+			<li v-for="item in items">{{item}}</li>
+		</ul>
+	</div>
+	
+	<p><button onclick="add()">add</button></p>
+	<script>
+		function add(){
+			// Vue.set 存在的意义: 1. 当你利用索引直接设置一个项时,vue不会为我们自动更新; 2.当你修改数组的长度时,vue不会为我们自动更新
+
+			//Vue.set(outDate,'count',2);
+			//app.count++;
+
+			//outDate.count++;
+			//outDate.items[1] = 'ddd'; // 当上面操作虚拟dom时,这句可以执行,即引出了set
+			Vue.set(app.items,1,'ddd');
+		}
+
+		let outDate = {
+			count : 1,
+			goods : 'car',
+			items : ['aaa','bbb','ccc']
+		}
+		let app = new Vue({
+			el : '#app',
+			data : outDate
+		})
+	</script>
+</body>
+</html>

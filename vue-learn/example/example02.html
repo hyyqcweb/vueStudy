@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>example02 实例方法</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>example02 实例方法</h1>
+	<br>
+	<div id="app"></div>
+	<p><button onclick="reload()">刷新</button></p>
+	<p><button onclick="destroy()">卸载</button></p>
+	<p><button onclick="tick()">更改数据</button></p>
+	<script>
+		let hyyqc = Vue.extend({
+			template : `<p>{{message}}</p>`,
+			data(){
+				return {
+					message : 'Hello'
+				}
+			},
+			mounted(){
+				console.log('mounted 被创建'); // 生命周期
+			},
+			destroyed(){
+				console.log('destroyed 被卸载');
+			},
+			updated(){
+				console.log('updated 被更新');
+			}
+		})
+		let vm = new hyyqc().$mount('#app');
+		function destroy(){
+			vm.$destroy();
+		}
+		function reload(){
+			vm.$forceUpdate();
+		}
+		function tick(){
+			vm.message = 'update message info';
+			vm.$nextTick(()=>console.log('message更新完后我被调用了'));
+		}
+	</script>
+</body>
+</html>

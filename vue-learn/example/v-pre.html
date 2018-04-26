@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-pre&v-cloak&v-once</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-pre&v-cloak&v-once</h1>
+	<hr>
+	<div id="app">
+		<div v-pre>{{msg}}</div> 
+		<!-- v-pre 原样输出,跳过vue的编译 -->
+		<div v-cloak>页面DOM加载完在显示</div>
+		<!-- v-cloak 类似于onload 等页面Dom加载完在显示 -->
+		<div>
+			<p><label v-once>{{msg}}</label></p>
+			<!-- v-once 只渲染一次,即页面加载完了也就渲染完了 -->
+			<input type="text" v-model="msg" name="">
+			<p><label>{{msg}}</label></p>
+		</div>
+	</div>
+	<script>
+		let app = new Vue({
+			el : '#app',
+			data : {
+				msg : 'hello world'
+			}
+		})
+	</script>
+</body>
+</html>

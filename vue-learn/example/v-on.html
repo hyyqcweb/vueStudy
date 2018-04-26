@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-on</h1>
+	<hr>
+	<div id="app">
+		本场比赛得分: {{count}}
+		<p>
+			<button @click="add">加分</button>
+			<button @click="minus">减分</button>
+		</p>
+	</div>
+	<script>
+		let app = new Vue({
+			el : '#app',
+			data : {
+				count : 0
+			},
+			methods: {
+				add(){
+					this.count++
+				},
+				minus(){
+					this.count--
+				}
+			}
+		})
+	</script>
+</body>
+</html>

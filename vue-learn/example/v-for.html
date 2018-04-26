@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-for</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-for</h1>
+	<hr>
+	<div id="app">
+		<ul>
+			<li v-for="item in sortItems">{{item}}</li>
+		</ul>
+		<hr>
+		<ul>
+			<!-- <li><a v-for="student in students">
+			{{student.name}} -- {{student.age}}
+				</a>
+			</li> -->
+			<!-- 加入索引序号 -->
+			<li v-for="(student,index) in sortStudents">
+				{{index+1}}:{{student.name}} -- {{student.age}}
+			</li>
+		</ul>
+	</div>
+	<script>
+		let app = new Vue({
+			el : '#app',
+			data : {
+				 items:[20,23,18,6,32,19,54],
+				 students : [
+				 	{name : 'kevin', age : 16},
+				 	{name : 'hyyqc', age : 20}
+				 ]
+			},
+			computed:{
+				sortItems(){
+					return this.items.sort(sortNumber);
+				},
+				sortStudents(){
+					return sortByKey(this.students,'age');
+				}
+			}
+		})
+		// 解决上面排序bug [20,23,18,6,32,19,54] 6最大
+		function sortNumber(a,b){
+			return a-b;
+		}
+		//对象排序
+		function sortByKey(array,key){
+			return array.sort(function(a,b){
+				let x = a[key];
+				let y = b[key];
+				return ((x<y)?-1:((x>y)?1:0));
+			})
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>watch option</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>watch option</h1>
+	<hr>
+	<div id="app">
+		<p>今日温度:{{temperature}}°</p>
+		<p>穿衣建议:{{garb}}</p>
+		<p>
+			<button @click="add">升高温度</button>
+			<button @click="reduce">降低温度</button>
+		</p>
+	</div>
+	<script>
+		// 一般做成数组
+		let temperature = ['短袖','不穿衣服','夹克衫','羽绒服'];
+		let app = new Vue({
+			el : '#app',
+			data : {
+				temperature : 14,
+				garb : '夹克衫'
+			},
+			methods:{
+				add(){
+					this.temperature += 5;
+				},
+				reduce(){
+					this.temperature -= 5;
+				}
+			},
+			// 写在构造器里面 第一种写法 oldVal是可选参数
+			// watch:{
+			// 	temperature(newVal,oldVal){
+			// 		if(newVal >= 26 && newVal<55){
+			// 			this.garb = temperature[0]
+			// 		}else if(newVal >= 55){
+			// 			this.garb = temperature[1]
+			// 		}else if(newVal>0 && newVal<26){
+			// 			this.garb = temperature[2]
+			// 		}else if(newVal<0){
+			// 			this.garb = temperature[3]
+			// 		}
+			// 	}
+			// }
+		})
+
+		// 实例写 第二种写法 
+		app.$watch('temperature',(newVal,oldVal)=>{
+			//debugger;
+			// 有个坑 这里的this.garb 指向有问题,需换成app.garb
+			if(newVal >= 26 && newVal<55){
+				app.garb = temperature[0]
+			}else if(newVal >= 55){
+				app.garb = temperature[1]
+			}else if(newVal>0 && newVal<26){
+				app.garb = temperature[2]
+			}else if(newVal<0){
+				app.garb = temperature[3]
+			}
+		})
+	</script>
+</body>
+</html>

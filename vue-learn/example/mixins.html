@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mixins option</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>mixins option</h1>
+	<br>
+	<div id="app">
+		{{num}}
+		<p><button @click="add">add</button></p>
+	</div>
+	<script>
+		let addConsole = {
+			updated(){
+				console.log('数据发生变化了' + this.num)
+			}
+		}
+		// 全局mixins没有s ,全局最先,构造器第二,原生的最后
+		Vue.mixin({
+			updated(){
+				console.log('全局的混入')
+			}
+		})
+		let app = new Vue({
+			el : '#app',
+			data : {
+				num : 1
+			},
+			methods : {
+				add(){
+					this.num++;
+				}
+			},
+			updated(){
+				console.log('我是原生的')
+			},
+			mixins : [addConsole]
+
+			// mixins 混入的先执行,原生的后执行
+		})
+	</script>
+</body>
+</html>

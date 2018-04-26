@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-component props属性</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1 style="color:red">component 组件相识 props</h1>
+	<hr>
+	<div id="app">
+		<panda :here="msg"></panda>
+	</div>
+	<script>
+		let app = new Vue({
+			el : '#app',
+			data : {
+				msg : 'China' // 模拟后台传过来的数据
+			},
+			components:{
+				"panda" : {
+					template : `<div style="color:green">Panda from {{here}}</div>`,
+					props : ['here']
+				}
+			}
+		})
+	</script>
+</body>
+</html>

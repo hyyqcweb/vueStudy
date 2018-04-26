@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-extend构造器的延伸</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>vue-extend构造器的延伸</h1>
+	<hr>
+	<author></author>
+	<div id="author"></div>
+	<script>
+		let authorExtend = Vue.extend({
+			template:"<p><a :href='authorURL'>{{authorName}}</a></p>",
+			// 第一坑 href 里面要单引号
+			// 第二坑 在全局里面,不能直接data{},需要data:function(),也就是data()
+			data(){
+				return {
+					authorName : 'hyyqc',
+					authorURL : 'http://www.baidu.com'
+				}
+			}
+		});
+		//new authorExtend().$mount('#author') // 也可以绑定 推荐这一种
+		new authorExtend().$mount('author') // 跟jquery绑定方式一样
+	</script>
+</body>
+</html>

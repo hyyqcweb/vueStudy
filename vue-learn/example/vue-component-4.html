@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-component 标签</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1 style="color:red">component 组件相伴 标签</h1>
+	<hr>
+	<div id="app">
+		<component :is="msg"></component>
+		<br>
+		<button @click="changeComponent">changeComponent</button>
+	</div>
+
+	<script>
+		let componentA = {
+			template : `<div style="color:red">componentA</div>`
+		}
+		let componentB = {
+			template : `<div style="color:gray">componentB</div>`
+		}
+		let componentC = {
+			template : `<div style="color:green">componentC</div>`
+		}
+		let app = new Vue({
+			el : '#app',
+			data : {
+				msg : 'componentA'
+			},
+			components : {
+				"componentA" : componentA,
+				"componentB" : componentB,
+				"componentC" : componentC,
+			},
+			methods : {
+				changeComponent(){
+					if(this.msg == "componentA"){
+						this.msg = 'componentB';
+					}else if(this.msg == "componentB"){
+						this.msg = 'componentC';
+					}else{
+						this.msg = 'componentA';
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>component 组件初识</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1 style="color:red">component 组件初识</h1>
+	<hr>
+	<div id="app">
+		<hyyqc></hyyqc>
+		<panda></panda>
+	</div>
+	<script>
+		Vue.component('hyyqc',{
+			template : `<h2>我是全局的hyyqc组件</h2>`
+		})
+		// 上面的component只能定义一个,下面的components可以定义多个
+		let app = new Vue({
+			el : '#app',
+			components:{
+				"panda" : {
+					template : `<h2>我是局部的panda组件</h2>`
+				}
+			}
+		})
+	</script>
+</body>
+</html>

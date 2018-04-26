@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-directive</title>
+	<script src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>vue-directive 自定义指令</h1>
+	<hr>
+	<div id="app">
+		<div v-hyyqc="color">
+			{{num}}
+		</div>
+		<p><button @click="add">Add</button></p>
+		<p><button onclick="jiebang()">解绑</button></p>
+	</div>
+	<script>
+		// Vue.directive("hyyqc",(el,binding,vnode)=>{
+		// 	// el : 指令所绑定的元素,
+		// 	// binding : 一个对象,包含指令的很多信息
+		// 	// vnode : vue编译生成的虚拟节点
+
+		// 	console.log(el); // <div style="color: green;">10</div>
+		// 	el.style="color:" + binding.value;
+		// 	console.log(binding.name); // hyyqc
+		// 	console.log(binding.value); // green
+		// 	console.log(binding.expression); // color
+		// })
+		function jiebang(){
+			app.$destroy();
+		}
+		Vue.directive("hyyqc",{
+			// 自定义指令总共有五个生命周期(钩子函数)
+
+			// bind 只调用一次,指令第一次绑定到元素时调用
+			bind:function(el,binding,vnode){//被绑定
+			     console.log('1 - bind');
+			     el.style="color:" + binding.value;
+			},
+			// inserted 被绑定元素插入父节点时调用
+			inserted:function(){//绑定到节点
+			      console.log('2 - inserted');
+			},
+			// update 被绑定元素所在模板更新时调用
+			update:function(){//组件更新
+			      console.log('3 - update');
+			},
+			// componentUpdated 被绑定元素所在模板完成一次更新周期时调用
+			componentUpdated:function(){//组件更新完成
+			      console.log('4 - componentUpdated');
+			},
+			// unbind 调用一次,指令和元素解绑时调用
+			unbind:function(){//解绑
+			      console.log('1 - bind');
+			}
+		})
+
+		let app = new Vue({
+			el : '#app',
+			data : {
+				num : 10,
+				color: 'green'
+			},
+			methods: {
+				add(){
+					this.num++;
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>
