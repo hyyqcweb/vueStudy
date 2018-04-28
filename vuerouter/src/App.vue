@@ -4,6 +4,9 @@
     <router-view/>
     <router-view name="left" style="width: 50%;float: left;height: auto;background: red;"/>
     <router-view name="right" style="width: 50%;float: left;height: auto;background: green;"/>
+    <br>
+    <router-link to="/">Home</router-link>
+    <router-link to="/params/198/website">params</router-link>
   </div>
 </template>
 
