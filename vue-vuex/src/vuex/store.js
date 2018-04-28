@@ -19,8 +19,21 @@ const getters = {
 	// getters 过滤属性 每次加100
 	count :state=>state.count += 100
 }
+const actions = {
+	addAction(context){
+		context.commit('add',10);
+		setTimeout(()=>{
+			context.commit('reduce',1)
+		},3000)
+		console.log('我比reduce先执行')
+	},
+	reduceAction({commit}){
+		commit('reduce',5)
+	}
+}
 export default new Vuex.Store({
 	state,
 	mutations,
-	getters
+	getters,
+	actions
 })

@@ -6,13 +6,17 @@
 		<h3>{{count}}</h3>
 		<!-- <p><button @click="$store.commit('add',10)">add</button></p>
 		<p><button @click="$store.commit('reduce')">reduce</button></p> -->
+		<h4>同步</h4>
 		<p><button @click="add(10)">add</button></p>
 		<p><button @click="reduce(5)">reduce</button></p>
+		<h4>异步</h4>
+		<p><button @click="addAction">add</button></p>
+		<p><button @click="reduceAction">reduce</button></p>
 	</div>
 </template>
 <script>
 	import store from '@/vuex/store';
-	import {mapState,mapMutations,mapGetters} from 'vuex'; // 第二种第三种方法用到 
+	import {mapState,mapMutations,mapGetters,mapActions} from 'vuex'; // 第二种第三种方法用到 
 	// mapState 更改状态  mapMutations 更改上面定义的click
 	export default {
 
@@ -36,8 +40,11 @@
 		computed:{  
 			...mapState(['count']),
 			...mapGetters(['count'])   // 当有两种的时候就是这样写
-		}
-		methods:mapMutations(['add','reduce']),
+		},
+		methods:{
+			...mapMutations(['add','reduce']),
+			...mapActions(['addAction','reduceAction'])
+		},
 		store
 	}
 	/*
