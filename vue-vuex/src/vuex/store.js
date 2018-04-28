@@ -31,9 +31,13 @@ const actions = {
 		commit('reduce',5)
 	}
 }
-export default new Vuex.Store({
+// 当项目开发人员非常多的时候适用module,模块化开发
+const moduleA = {
 	state,
 	mutations,
 	getters,
 	actions
+}
+export default new Vuex.Store({
+	modules : {a : moduleA}
 })

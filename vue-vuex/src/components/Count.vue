@@ -3,7 +3,9 @@
 		<h2>{{msg}}</h2>
 		<hr>
 		<!-- {{$store.state.count}} = {{count}} -->
-		<h3>{{count}}</h3>
+		<!-- <h3>{{count}}</h3> -->
+		<!-- 引用了模块,即变成了下面这样.如果想变成{{count}}  -->
+		<h3>{{$store.state.a.count}}</h3>  
 		<!-- <p><button @click="$store.commit('add',10)">add</button></p>
 		<p><button @click="$store.commit('reduce')">reduce</button></p> -->
 		<h4>同步</h4>
@@ -25,6 +27,13 @@
 				msg : 'Hello Vuex'
 			}
 		},
+		// {{$store.state.a.count}} => {{count}}
+		// computed:{
+		// 	count(){
+		// 		return this.$store.state.a.count
+		// 	}
+		// }
+
 		// 第一种
 		// computed:{  
 		// 	count(){
