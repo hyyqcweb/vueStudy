@@ -1,4 +1,5 @@
 # vue学习历程
++ ES6基础(ES6-learn)
 + vue基础(vue-learn)
 + vue-cli(vue-cli)
 + vue-router(vuerouter)
