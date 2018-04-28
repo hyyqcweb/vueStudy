@@ -37,7 +37,13 @@ export default new Router({
     // 通过url传递参数
     {
     	path: '/params/:newsId(\\d+)/:newsTilte', // 正则(\\d+) 输入必须为数字 当那边传过来的不是数字,则页面不会显示
-    	component : params
+    	component : params,
+      // beforeEnter:(to,from,next) => {
+      //   console.log('我进入了params模板');
+      //   console.log(to);
+      //   console.log(from);
+      //   next() // 相当于一个开关,next显示开,不写显示关
+      // },
     },
     {
       path: '/goHome',
@@ -67,3 +73,6 @@ export default new Router({
 // alias 别名 不会直接改变url地址,会让用户知道自己所访问的地址,但是改变了<router-view/>的内容
 
 // 这里有个坑,alias不能用在path:'/'下,这样的别名是不起作用的(现在可以用,这个坑去除)
+
+
+// 路由的钩子函数 可以分为直接在路由里面写的,或者在模板中写的,两者选其一

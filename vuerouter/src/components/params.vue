@@ -12,6 +12,14 @@
 			return {
 				msg : 'params'
 			}
+		},
+		beforeRouteEnter:(to,from,next) => {
+			console.log('我进入了params模板');
+			next();
+		},
+		beforeRouteLeave:(to,from,next) => {
+			console.log('我离开了params模板');
+			next();
 		}
 	}
 </script>
