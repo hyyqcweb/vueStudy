@@ -1,6 +1,6 @@
 // 第五节: 字符串拼接 `` 
 
-//let jjj = "江俊杰";
+//let jjj = "幻夜";
 //let blog = `都是的发送到发送到${jjj}`; //里面也支持html标签
 //document.write(blog); 
 // indexOf 找索引  blog.indexOf(jjj)
@@ -36,10 +36,10 @@
 
 // 第七节: ES6中新增的数组知识-1
 
-// json转数组
+// //json转数组
 // let json = {
 // 	'0' : 'jjj',
-// 	'1' : '江俊杰',
+// 	'1' : '幻夜',
 // 	length : 2
 // }
 // console.log(Array.from(json))
@@ -57,51 +57,51 @@
 
 // 第八节: ES6中新增的数组知识-2
 
-// fill() 填充 接收三个参数 填充的变量,开始填充的位置,填充到的位置
+// //fill() 填充 接收三个参数 填充的变量,开始填充的位置,填充到的位置
 // let arr = [1,2,3,4,5,6,7,8,9];
 // arr.fill('jjj',2,3);
 // console.log(arr);
 // // for of 循环
-// let arr1 = ['jjj','江俊杰'];
+// let arr1 = ['jjj','幻夜'];
 // for(let item of arr1){
 // 	console.log(item);
 //  }
 // // for of 数组索引
-// let arr2 = ['jjj','江俊杰'];
+// let arr2 = ['jjj','幻夜'];
 // for(let index of arr2.keys()){
 // 	console.log(index);
 //  }
 // // for of 输出数组的内容和索引
-// let arr3 = ['jjj','江俊杰'];
+// let arr3 = ['jjj','幻夜'];
 // for(let [index,val] of arr3.entries()){
 // 	console.log(index+ ' : ' + val);
 // }
 // // entries 生成的是iterator形式的数组
-// let arr4 = ['jjj','江俊杰'];
+// let arr4 = ['jjj','幻夜'];
 // let list = arr4.entries();
 // console.log(list.next().value);
 // console.log(list.next().value);
 
 // 第九节: ES6中的箭头函数和扩展
 
-//let add = (a,b=2) => a+b;
+// let add = (a,b=2) => a+b;
 // console.log(add(1,3))
-//console.log(add.length) // length取决于 括号里面的参数有没有定义,如果有则默认排除,故现在length为1
+// console.log(add.length) // length取决于 括号里面的参数有没有定义,如果有则默认排除,故现在length为1
 
 // 第十节: ES6的函数和数组补漏
 
-// json对象的解析
+// //json对象的解析
 // let json = {
 // 	a : 'jjj',
-// 	b : '江俊杰'
+// 	b : '幻夜'
 // }
 // function fun({a,b}){
 // 	console.log(a,b);
 // }
 // fun(json)
 
-//数组的函数解析
-// let arr = ['jjj','江俊杰'];
+// //数组的函数解析
+// let arr = ['jjj','幻夜'];
 // function fun(a,b){
 // 	console.log(a,b)
 // }
@@ -110,7 +110,7 @@
 // // in是用来判断对象或者数组中是否存在某个值
 // let obj ={
 // 	a : 'jjj',
-// 	b : '江俊杰'
+// 	b : '幻夜'
 // }
 // console.log('a' in obj) // true
 // // in 解决了数组里面值为0,但不是空值的问题
@@ -118,13 +118,13 @@
 // console.log(0 in arr1); // 0指的是数组下标位置是否为空
 
 // // 数组遍历的方法 for for-of forEach filter some map 
-// let arr2 = ['jjj','江俊杰'];
+// let arr2 = ['jjj','幻夜'];
 // arr2.forEach((val,index)=> console.log(index,val));
 // arr2.filter(x=>console.log(x))
 // arr2.some(x=>console.log(x))
 // console.log(arr2.map(x=>'web')) // 替换的功能
 
-// 数组转换成字符串 arr.toString() 或 arr.join()
+// //数组转换成字符串 arr.toString() 或 arr.join()
 
 // 第十一节: ES6中的对象
 
@@ -168,7 +168,7 @@
 
 // assign()
 // let a = {a:'jjj'};
-// let b = {b:'江俊杰'};
+// let b = {b:'幻夜'};
 // let c = {c:'web'};
 // let d = Object.assign(a,b,c);
 // console.log(d) // 输入a,b,c
@@ -191,7 +191,7 @@
 // // 用Symbol构建对象的key
 // let jjj = Symbol();
 // let obj = {
-// 	[jjj] : '江俊杰'
+// 	[jjj] : '幻夜'
 // };
 // // 有个坑: 这里不能用obj.jjj 而是用obj[jjj] 赋值也是
 // console.log(obj[jjj]);
@@ -216,7 +216,7 @@
 // 第十三节: Set和WeakSet数据结构
 
 //Set 传入的是伪数组 天然的去重,不允许重复值
-// let setArr = new Set(['jjj','江俊杰','web']);
+// let setArr = new Set(['jjj','幻夜','web']);
 // console.log(setArr)
 
 // Set的增删查 增(add),单个删(delete),全删(clear),查(has)
@@ -225,7 +225,7 @@
 //删: 数组方法是pop,shift 这里是delete
 //查: has 返回的是true or false
 //长度: 数组方法是length 这里是size
-// let setArr = new Set(['jjj','江俊杰','web','jjj']);
+// let setArr = new Set(['jjj','幻夜','web','jjj']);
 // console.log(setArr);
 // setArr.add('前端');
 // console.log(setArr);
@@ -236,12 +236,12 @@
 // console.log(setArr.size)
 
 // forEach 循环
-// let setArr = new Set(['jjj','江俊杰','web','jjj']);
+// let setArr = new Set(['jjj','幻夜','web','jjj']);
 // setArr.forEach((value)=>console.log(value))
 
 //WeakSet 传入的可以是对象 天然的去重 类似于懒加载
 // let weakObj = new WeakSet();
-// let obj = {a:'jjj',b:'江俊杰'};
+// let obj = {a:'jjj',b:'幻夜'};
 // weakObj.add(obj);
 // console.log(weakObj)
 
@@ -296,7 +296,7 @@
 // 	}
 // })
 // console.log(pro.add(100));
-// pro.name="江俊杰"
+// pro.name="幻夜"
 // console.log(pro.name)
 
 // apply的使用
@@ -419,7 +419,7 @@
 // import 负责模块的引用
 
 // let a = "jjj";
-// let b = "江俊杰";
+// let b = "幻夜";
 // let c = "web";
 
 // // as的好处就是不暴露模块里面的变量名称,也是为了更语义化
