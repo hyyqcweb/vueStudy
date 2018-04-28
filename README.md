@@ -1,7 +1,9 @@
 # vue学习历程
 + vue基础(vue-learn)
 + vue进阶(vue-cli)
++ vue-router(vuerouter)
 + 持续更新...
+
 ```bash
                                                    _ooOoo_
                                                    o8888888o
@@ -33,4 +35,14 @@
                                           奔驰宝马贵者趣，公交自行程序员。
                                           别人笑我忒疯癫，我笑自己命太贱；
                                           不见满街漂亮妹，哪个归得程序员？
+```
+
+
+## 项目下载
+
+```bash
+    git clone https://github.com/hyyqcweb/vueStudy.git
+    cd vuerouter(项目名)
+    npm install
+    npm run dev
 ```
