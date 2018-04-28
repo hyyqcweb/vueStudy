@@ -33,6 +33,14 @@ export default new Router({
     {
     	path: '/params/:newsId(\\d+)/:newsTilte', // 正则(\\d+) 输入必须为数字 当那边传过来的不是数字,则页面不会显示
     	component : params
+    },
+    {
+      path: '/goHome',
+      redirect : '/'   // redirect 重定向
+    },
+    {
+      path : '/goParams/:newsId(\\d+)/:newsTilte',
+      redirect : '/params/:newsId(\\d+)/:newsTilte'
     }
   ]
 })

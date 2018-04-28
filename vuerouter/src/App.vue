@@ -5,8 +5,10 @@
     <router-view name="left" style="width: 50%;float: left;height: auto;background: red;"/>
     <router-view name="right" style="width: 50%;float: left;height: auto;background: green;"/>
     <br>
-    <router-link to="/">Home</router-link>
-    <router-link to="/params/198/website">params</router-link>
+    <router-link to="/">Home</router-link>|
+    <router-link to="/params/198/website">params</router-link>|
+    <router-link to="/goHome">goHome</router-link>|
+    <router-link to="/goParams/666/hyyqc">goParams</router-link>
   </div>
 </template>
 
