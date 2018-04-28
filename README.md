@@ -1,7 +1,8 @@
 # vue学习历程
 + vue基础(vue-learn)
-+ vue进阶(vue-cli)
++ vue-cli(vue-cli)
 + vue-router(vuerouter)
++ vue-vuex(vue-vuex)
 + 持续更新...
 
 <!-- ```bash
