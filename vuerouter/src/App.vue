@@ -2,10 +2,12 @@
   <div id="app">
     <img src="./assets/logo.png">
     <transition name="fade" mode="out-in"> 
-      <!-- mode 有两种模式 in-out out-in -->
-      <router-view/>
-      <router-view name="left" style="width: 50%;float: left;height: auto;background: red;"/>
-      <router-view name="right" style="width: 50%;float: left;height: auto;background: green;"/>
+        <!-- mode 有两种模式 in-out out-in -->
+        <template>
+          <router-view/>
+          <!-- <router-view name="left" style="width: 50%;float: left;height: auto;background: red;"/>
+          <router-view name="right" style="width: 50%;float: left;height: auto;background: green;"/> -->
+        </template>
     </transition>
     <br>
     <router-link to="/">Home</router-link>|
@@ -14,6 +16,7 @@
     <router-link to="/goParams/666/hyyqc">goParams</router-link>
     <router-link to="/hyyqc">hyyqc alias</router-link>
     <router-link to="/jjj">不起作用的别名(vue版本更新,现在可以了)</router-link>
+     <router-link to="/asdasda">瞎写的跳404</router-link>
   </div>
 </template>
 

@@ -4,10 +4,14 @@ import HelloWorld from '@/components/HelloWorld'
 import Hi1 from '@/components/Hi1'
 import Hi2 from '@/components/Hi2'
 import params from '@/components/params'
+import Error from '@/components/Error'
 
 Vue.use(Router)
 
 export default new Router({
+  mode:'history', 
+  // 默认是hash 也就是url是这样的 http://localhost:8080/#/
+  // history url是这样的 http://localhost:8080/ 
   routes: [
     {
       path: '/',
@@ -48,6 +52,10 @@ export default new Router({
       component : Hi1,
       alias : '/hyyqc'  // alias 别名 作用在下面讲解
     },
+    {
+      path : '*',
+      component : Error
+    }
     
   ]
 })
