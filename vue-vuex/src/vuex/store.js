@@ -15,7 +15,12 @@ const mutations = {
 		state.count -= n;
 	}
 }
+const getters = {
+	// getters 过滤属性 每次加100
+	count :state=>state.count += 100
+}
 export default new Vuex.Store({
 	state,
-	mutations
+	mutations,
+	getters
 })

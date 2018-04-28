@@ -12,7 +12,7 @@
 </template>
 <script>
 	import store from '@/vuex/store';
-	import {mapState,mapMutations} from 'vuex'; // 第二种第三种方法用到 
+	import {mapState,mapMutations,mapGetters} from 'vuex'; // 第二种第三种方法用到 
 	// mapState 更改状态  mapMutations 更改上面定义的click
 	export default {
 
@@ -32,7 +32,11 @@
 		// 	count:state => state.count
 		// }),
 		// 第三种
-		computed:mapState(['count']),
+		// computed:mapState(['count']),
+		computed:{  
+			...mapState(['count']),
+			...mapGetters(['count'])   // 当有两种的时候就是这样写
+		}
 		methods:mapMutations(['add','reduce']),
 		store
 	}
