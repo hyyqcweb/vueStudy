@@ -15,9 +15,10 @@ export default new Router({
       // component: HelloWorld
       components : {
       	default : HelloWorld,
-		left : Hi1,
-		right : Hi2      	
-      }
+    		left : Hi1,
+    		right : Hi2      	
+      },
+      alias : '/jjj'
     },
     {
       path: '/hyyqc',
@@ -41,8 +42,20 @@ export default new Router({
     {
       path : '/goParams/:newsId(\\d+)/:newsTilte',
       redirect : '/params/:newsId(\\d+)/:newsTilte'
-    }
+    },
+    {
+      path : '/Hi1',
+      component : Hi1,
+      alias : '/hyyqc'  // alias 别名 作用在下面讲解
+    },
+    
   ]
 })
 
 // 这里有个坑,如果引用多个router-view,这里的component 要变成components 是多了一个s的
+
+// alias 和 redirect 的区别   别名  重定向
+// redirect 重定向 会直接改变url地址,把url地址变成了真实的path地址
+// alias 别名 不会直接改变url地址,会让用户知道自己所访问的地址,但是改变了<router-view/>的内容
+
+// 这里有个坑,alias不能用在path:'/'下,这样的别名是不起作用的(现在可以用,这个坑去除)

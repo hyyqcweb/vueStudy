@@ -9,6 +9,8 @@
     <router-link to="/params/198/website">params</router-link>|
     <router-link to="/goHome">goHome</router-link>|
     <router-link to="/goParams/666/hyyqc">goParams</router-link>
+    <router-link to="/hyyqc">hyyqc alias</router-link>
+    <router-link to="/jjj">不起作用的别名(vue版本更新,现在可以了)</router-link>
   </div>
 </template>
 
