@@ -2,14 +2,18 @@
 	<div>
 		<h2>{{msg}}</h2>
 		<hr>
-		<h3>{{$store.state.count}} - {{count}}</h3>
-		<p><button @click="$store.commit('add')">add</button></p>
-		<p><button @click="$store.commit('reduce')">reduce</button></p>
+		<!-- {{$store.state.count}} = {{count}} -->
+		<h3>{{count}}</h3>
+		<!-- <p><button @click="$store.commit('add',10)">add</button></p>
+		<p><button @click="$store.commit('reduce')">reduce</button></p> -->
+		<p><button @click="add(10)">add</button></p>
+		<p><button @click="reduce(5)">reduce</button></p>
 	</div>
 </template>
 <script>
 	import store from '@/vuex/store';
-	import {mapState} from 'vuex'; // 第二种第三种方法用到
+	import {mapState,mapMutations} from 'vuex'; // 第二种第三种方法用到 
+	// mapState 更改状态  mapMutations 更改上面定义的click
 	export default {
 
 		data(){
@@ -29,6 +33,7 @@
 		// }),
 		// 第三种
 		computed:mapState(['count']),
+		methods:mapMutations(['add','reduce']),
 		store
 	}
 	/*

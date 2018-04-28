@@ -7,11 +7,12 @@ const state ={
 	count : 1
 }
 const mutations = {
-	add(state){
-		state.count ++;
+	// 需求:不想+1,要传值进行加
+	add(state,n){
+		state.count += n;
 	},
-	reduce(state){
-		state.count --;
+	reduce(state,n){
+		state.count -= n;
 	}
 }
 export default new Vuex.Store({
