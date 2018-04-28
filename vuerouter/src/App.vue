@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <div>
+      <button @click="goBack">后退</button>
+      <button @click="goTo">前进</button>
+      <button @click="goHome">回到首页</button>
+    </div>
     <transition name="fade" mode="out-in"> 
         <!-- mode 有两种模式 in-out out-in -->
         <template>
@@ -22,7 +27,18 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods : {
+    goBack(){
+      this.$router.go(-1);
+    },
+    goTo(){
+      this.$router.go(1);
+    },
+    goHome(){
+      this.$router.push('/');
+    }
+  }
 }
 </script>
 
