@@ -1,21 +1,21 @@
-# register
+# Vue项目实战
 
-> A Vue.js project
+> 经过前面的练习,我们可以实战啦,所用到的技术栈:vue2.0全家桶(vue+vue-router+vuex+axios+es6+less)+webpack+elementUI
 
-## Build Setup
+> 安装less 
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+```bash
+	npm install less less-loader --save
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 安装步骤
+
+``` bash
+# 安装项目依赖包
+npm install
+
+# 运行项目
+npm run dev
+
+```
+
