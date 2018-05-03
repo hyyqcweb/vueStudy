@@ -2,23 +2,23 @@
 	<div class="left-nav">
 		<ul>
 			<li>
-				<i class="icon iconfont icon-31shouye"></i>
+				<i class="icon iconfont icon-home"></i>
 				<div>首页</div>
 			</li>
 			<li>
-				<i class="icon iconfont icon-31dianpu"></i>
+				<i class="icon iconfont icon-store"></i>
 				<div>店铺</div>
 			</li>
 			<li>
-				<i class="icon iconfont icon-31quanbushangpin"></i>
+				<i class="icon iconfont icon-commodity"></i>
 				<div>商品</div>
 			</li>
 			<li>
-				<i class="icon iconfont icon-31huiyuanqia"></i>
+				<i class="icon iconfont icon-member"></i>
 				<div>会员</div>
 			</li>
 			<li>
-				<i class="icon iconfont icon-31paixingbang"></i>
+				<i class="icon iconfont icon-statistics"></i>
 				<div>统计</div>
 			</li>
 
