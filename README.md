@@ -45,7 +45,8 @@
 
 ```bash
     git clone https://github.com/hyyqcweb/vueStudy.git
-    cd vuerouter(项目名)
+    cd vueStudy(不要在这里 npm install)
+    cd vuerouter(选择项目名)
     npm install
     npm run dev
 ```
