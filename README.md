@@ -4,6 +4,7 @@
 + vue-cli(vue-cli)
 + vue-router(vuerouter)
 + vue-vuex(vue-vuex)
++ vue实战(register)
 + 持续更新...
 
 <!-- ```bash
