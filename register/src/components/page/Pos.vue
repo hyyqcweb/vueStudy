@@ -1,3 +1,4 @@
+<!-- 动态数据 -->
 <template>
   <div class="pos">
   	<el-row>
@@ -54,9 +55,33 @@
                   </li>
                 </ul>
               </el-tab-pane>
-              <el-tab-pane label="小食">小食</el-tab-pane>
-              <el-tab-pane label="饮料">饮料</el-tab-pane>
-              <el-tab-pane label="套餐">套餐</el-tab-pane>
+              <el-tab-pane label="小食">
+                <ul class="cook-items">
+                  <li v-for="cook in cook1Items">
+                    <span class="foodImage"><img :src="cook.goodsImg"></span>
+                    <span class="foodName">{{cook.goodsName}}</span>
+                    <span class="foodPrice">￥{{cook.price}}元</span>
+                  </li>
+                </ul>
+              </el-tab-pane>
+              <el-tab-pane label="饮料">
+                <ul class="cook-items">
+                  <li v-for="cook in cook2Items">
+                    <span class="foodImage"><img :src="cook.goodsImg"></span>
+                    <span class="foodName">{{cook.goodsName}}</span>
+                    <span class="foodPrice">￥{{cook.price}}元</span>
+                  </li>
+                </ul>
+              </el-tab-pane>
+              <el-tab-pane label="套餐">
+                <ul class="cook-items">
+                  <li v-for="cook in cook3Items">
+                    <span class="foodImage"><img :src="cook.goodsImg"></span>
+                    <span class="foodName">{{cook.goodsName}}</span>
+                    <span class="foodPrice">￥{{cook.price}}元</span>
+                  </li>
+                </ul>
+              </el-tab-pane>
             </el-tabs>
 
         </div>
@@ -66,6 +91,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'pos',
   data(){
@@ -88,104 +114,37 @@ export default {
           price: 8,
           count:1
         }],
-        // 常用商品上
-      universalGoods:[{
-            goodsId:1,
-            goodsName:'香辣鸡腿堡',
-            price:18
-        }, {
-            goodsId:2,
-            goodsName:'田园鸡腿堡',
-            price:15
-        }, {
-            goodsId:3,
-            goodsName:'和风汉堡',
-            price:15
-        }, {
-            goodsId:4,
-            goodsName:'快乐全家桶',
-            price:80
-        }, {
-            goodsId:5,
-            goodsName:'脆皮炸鸡腿',
-            price:10
-        }, {
-            goodsId:6,
-            goodsName:'魔法鸡块',
-            price:20
-        }, {
-            goodsId:7,
-            goodsName:'可乐大杯',
-            price:10
-        }, {
-            goodsId:8,
-            goodsName:'雪顶咖啡',
-            price:18
-        }, {
-            goodsId:9,
-            goodsName:'大块鸡米花',
-            price:15
-        }, {
-            goodsId:10,
-            goodsName:'香脆鸡柳',
-            price:17
-        }],
-        // 常用商品下
-        cookItems:[
-          {
-              goodsId:1,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos001.jpg",
-              goodsName:'香辣鸡腿堡',
-              price:18
-          }, {
-              goodsId:2,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos002.jpg",
-              goodsName:'田园鸡腿堡',
-              price:15
-          }, {
-              goodsId:3,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos004.jpg",
-              goodsName:'和风汉堡',
-              price:15
-          }, {
-              goodsId:4,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos003.jpg",
-              goodsName:'快乐全家桶',
-              price:80
-          }, {
-              goodsId:5,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos003.jpg",
-              goodsName:'脆皮炸鸡腿',
-              price:10
-          }, {
-              goodsId:6,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos004.jpg",
-              goodsName:'魔法鸡块',
-              price:20
-          }, {
-              goodsId:7,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos001.jpg",
-              goodsName:'可乐大杯',
-              price:10
-          }, {
-              goodsId:8,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos003.jpg",
-              goodsName:'雪顶咖啡',
-              price:18
-          }, {
-              goodsId:9,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos002.jpg",
-              goodsName:'大块鸡米花',
-              price:15
-          }, {
-              goodsId:20,
-              goodsImg:"http://7xjyw1.com1.z0.glb.clouddn.com/pos002.jpg",
-              goodsName:'香脆鸡柳',
-              price:17
-          }
-          
-      ],
+      // 常用商品上
+      universalGoods:[],
+      // 常用商品下
+      cookItems:[],
+      cook1Items:[],
+      cook2Items:[],
+      cook3Items:[],
     }
+  },
+  created(){
+    // 常用商品上
+    axios.get('http://jspang.com/DemoApi/oftenGoods.php')
+    .then(reponse => {
+      console.log(reponse);
+      this.universalGoods = reponse.data;
+    })
+    .catch(error => {
+      console.log(error);
+    })
+    // 常用商品下
+    axios.get('http://jspang.com/DemoApi/typeGoods.php')
+    .then(reponse => {
+      console.log(reponse);
+      this.cookItems = reponse.data[0];
+      this.cook1Items = reponse.data[1];
+      this.cook2Items = reponse.data[2];
+      this.cook3Items = reponse.data[3];
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 }
 </script>
