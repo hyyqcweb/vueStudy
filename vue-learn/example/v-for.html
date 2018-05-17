@@ -22,6 +22,10 @@
 			<li v-for="(student,index) in sortStudents">
 				{{index+1}}:{{student.name}} -- {{student.age}}
 			</li>
+			<br>
+			<li v-for="(value,index) in objList">
+				{{index}}--{{value}}
+			</li>
 		</ul>
 	</div>
 	<script>
@@ -32,7 +36,13 @@
 				 students : [
 				 	{name : 'kevin', age : 16},
 				 	{name : 'hyyqc', age : 20}
-				 ]
+				 ],
+				 objList: {
+				 	name : 'apple',
+				 	price : 34,
+				 	color: 'red',
+				 	weight: 14
+				 }
 			},
 			computed:{
 				sortItems(){
