@@ -4,6 +4,7 @@
 + vue-cli(vue-cli)
 + vue-router(vuerouter)
 + vue-vuex(vue-vuex)
++ vue实战(register)
 + 持续更新...
 
 <!-- ```bash
@@ -44,7 +45,8 @@
 
 ```bash
     git clone https://github.com/hyyqcweb/vueStudy.git
-    cd vuerouter(项目名)
+    cd vueStudy(不要在这里 npm install)
+    cd vuerouter(选择项目名)
     npm install
     npm run dev
 ```
