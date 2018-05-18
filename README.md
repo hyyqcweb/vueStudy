@@ -5,6 +5,7 @@
 + vue-router(vuerouter)
 + vue-vuex(vue-vuex)
 + vue实战(register)
++ vue实战(vue-familiar 电商项目)
 + 持续更新...
 
 <!-- ```bash
