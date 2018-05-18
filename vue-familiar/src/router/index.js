@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import componentA from '@/components/a.vue'
+import Layout from '@/components/Layout'
+import IndexPage from '@/pages/index'
 
 Vue.use(Router)
 
@@ -10,13 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-    	path: '/componentA/:color',
-    	name: 'componentA',
-    	component:componentA
+      name: 'IndexPage',
+      component: IndexPage
     }
   ]
 })

@@ -14,7 +14,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="app-content">content</div>
+		<div class="app-content">
+			<keep-alive>
+				<router-view></router-view>
+			</keep-alive>
+		</div>
 		<div class="app-footer">
 			<p>&copy; 2018 hyyqc MIT</p>
 		</div>		
