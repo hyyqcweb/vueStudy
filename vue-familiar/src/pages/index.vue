@@ -31,7 +31,10 @@
 	        <div 
 	        	class="index-board-item" 
 	        	v-for="(item,index) in boardList" 
-	        	:class="[{'line-last' : index % 2 !== 0},'index-board-' + index]">
+	        	:class="[{'line-last' : index % 2 !== 0},'index-board-' + index]">   
+	        	<!-- 当我们绑定class 为多项的时候,可以用数组嵌套  -->
+	        	<!-- line-last  当索引除2 不等于0时生效 -->
+	        	<!-- index-board 加上索引 既是 图片的class 也可引用id  id: item.id 下面的图片改成id名字即可 -->
 	        	<div class="index-board-item-inner">
 	        		<h2>{{item.title}}</h2>
 	        		<p>{{item.description}}</p>
