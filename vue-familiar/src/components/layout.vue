@@ -3,7 +3,7 @@
 		<div class="app-header">
 			<div class="app-header-inner">
 				<img src="../assets/logo.png" alt="logo">
-				<div class="head-nav">
+				<div class="header-nav">
 					<ul class="nav-list">
 						<li>登录</li>
 						<li class="nav-pile">|</li>
@@ -24,45 +24,44 @@
 	
 </script>
 <style>
-	@import '../assets/reset.css'
 	body {
 	  background: #f0f2f5;
 	  font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
 	  font-size: 14px;
 	  color: #444;
 	}
-	.app-head {
+	.app-header {
 	  background: #363636;
 	  color: #b2b2b2;
 	  height: 90px;
 	  line-height: 90px;
 	  width: 100%;
 	}
-	.app-head-inner {
+	.app-header-inner {
 	  width: 1200px;
 	  margin: 0 auto;
 	}
-	.head-logo {
+	.header-logo {
 	  float: left;
 	}
-	.app-head-inner img {
+	.app-header-inner img {
 	  width: 50px;
 	  margin-top: 20px;
 	}
-	.head-nav {
+	.header-nav {
 	  float: right;
 	}
-	.head-nav ul {
+	.header-nav ul {
 	  overflow: hidden;
 	}
-	.head-nav li {
+	.header-nav li {
 	  cursor: pointer;
 	  float: left;
 	}
 	.nav-pile {
 	  padding: 0 10px;
 	}
-	.app-foot {
+	.app-footer {
 	  text-align: center;
 	  height: 80px;
 	  width: 100%;
