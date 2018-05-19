@@ -6,6 +6,7 @@
 + vue-vuex(vue-vuex)
 + vue实战(register)
 + vue实战(vue-familiar 电商项目)
++ vue实战(vue-sell 高仿饿了么)
 + 持续更新...
 
 <!-- ```bash
