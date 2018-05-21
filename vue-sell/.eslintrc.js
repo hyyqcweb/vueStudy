@@ -25,6 +25,7 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'semi': ['error','always'] // 强制有分号结尾
+    'semi': ['error', 'always'], // 强制有分号结尾
+    'indent': 0
   }
 }

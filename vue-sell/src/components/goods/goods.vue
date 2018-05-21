@@ -1,10 +1,13 @@
 <template>
   <div>
-    我是header
+    I am goods
   </div>
 </template>
+
 <script>
 export default {};
 </script>
-<style>
+
+<style lang="less">
+
 </style>
