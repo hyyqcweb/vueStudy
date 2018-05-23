@@ -12,6 +12,7 @@ export default new Router({
     {
       path: '/',
       redirect: '/goods'
+      // 通过重定向让页面加载的时候就进入该路由
     },
     {
       path: '/goods',
