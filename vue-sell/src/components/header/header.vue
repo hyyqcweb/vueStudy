@@ -17,10 +17,19 @@
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
-      <div v-if="seller.supports" class="support-count">
+      <div v-if="seller.supports" class="support-count" @click="showDetail">
         <span class="count">{{seller.supports.length}}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
+    </div>
+    <div class="bulletin-wrapper" @click="showDetail">
+      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span>
+      <i class="icon-keyboard_arrow_right"></i>
+    </div>
+    <div class="background">
+      <img :src="seller.avatar" width="100%" height="100%">
+    </div>
+    <div class="detail" v-show="detailShow">
     </div>
   </div>
 </template>
@@ -31,6 +40,16 @@
         type: Object
       }
     },
+    data () {
+      return {
+        detailShow: false
+      };
+    },
+    methods: {
+      showDetail () {
+        this.detailShow = true;
+      }
+    },
     created () {
       this.classMap = ['decrease', 'discount', 'guarantee', 'invoice', 'special'];
     }
@@ -39,8 +58,10 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/css/mixin.styl";
   .header
+    position: relative
     color: #fff
-    background: #999
+    overflow: hidden
+    background: rgba(7,17,27,0.5)
     .content-wrapper
       position: relative
       padding: 24px 12px 18px 24px
@@ -97,7 +118,7 @@
       .support-count
         position: absolute
         right: 12px
-        bottom: 18px
+        bottom: 14px
         padding: 0 8px
         height: 24px
         line-height: 24px
@@ -111,4 +132,48 @@
           margin-left: 2px
           line-height: 24px
           font-size: 10px
+    .bulletin-wrapper
+      position: relative
+      height: 28px
+      line-height: 26px
+      padding: 0 12px
+      white-space: nowrap // 以下三行文字省略
+      overflow: hidden
+      text-overflow: ellipsis
+      background: rgba(7, 17, 27, 0.2)
+      .bulletin-title
+        display: inline-block
+        margin-top: 7px
+        width: 22px
+        height: 12px
+        bg-image('./images/bulletin')
+        background-size: 22px 12px
+        background-repeat: no-repeat
+      .bulletin-text
+        line-height: 28px
+        margin: 0 4px
+        font-size: 10px
+        vertical-align: top
+      .icon-keyboard_arrow_right
+        position: absolute
+        right: 12px
+        top: 10px
+        font-size: 10px
+    .background
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: -1
+      filter:blur(10px)  // 模糊效果
+    .detail
+      position: fixed
+      top: 0
+      left: 0
+      z-index: 100
+      width: 100%
+      height: 100%
+      overflow: auto
+      background: rgba(7, 17, 27, 0.8)
 </style>
