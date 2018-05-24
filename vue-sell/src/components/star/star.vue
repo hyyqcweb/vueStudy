@@ -19,7 +19,7 @@
         type: Number
       }
     },
-    computed: {
+    computed: { // 计算属性
       starType () {
         return 'star-' + this.size;
       },
