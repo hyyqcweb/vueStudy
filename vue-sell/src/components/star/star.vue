@@ -21,7 +21,7 @@
     },
     computed: { // 计算属性
       starType () {
-        return 'star-' + this.size;
+        return 'star-' + this.size; // 获取前面传过来的 48 / 36 / 24
       },
       itemClasses () {
         let result = [];

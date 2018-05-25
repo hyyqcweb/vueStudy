@@ -6,13 +6,13 @@
       </div>
       <div class="content">
         <div class="title">
-          <span class="brand"></span>
+          <span class="brand"></span> <!-- brand icon -->
           <span class="name">{{seller.name}}</span>
         </div>
         <div class="description">
-          {{seller.description}}/{{seller.deliveryTime}}分钟送达
+          {{seller.description}} / {{seller.deliveryTime}}分钟送达
         </div>
-        <div class="support" v-if="seller.supports">
+        <div class="support" v-if="seller.supports"> <!-- 当seller.supports === true  -->
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
@@ -24,9 +24,10 @@
     </div>
     <div class="bulletin-wrapper" @click="showDetail">
       <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span>
+      <!-- 两个span为什么写在同行呢: 因为让他们的间隙消失,减少bug和布局 -->
       <i class="icon-keyboard_arrow_right"></i>
     </div>
-    <div class="background">
+    <div class="background"> <!-- 背景的模糊效果特意加的一层 -->
       <img :src="seller.avatar" width="100%" height="100%">
     </div>
     <div class="detail" v-show="detailShow">
@@ -160,6 +161,7 @@ import star from '../star/star';
         border-radius: 14px
         background: rgba(0, 0, 0, 0.2)
         text-align: center
+        cursor: pointer
         .count
           font-size: 10px
           vertical-align: top
@@ -283,5 +285,6 @@ import star from '../star/star';
         height: 32px
         margin: -64px auto
         clear: both
+        cursor: pointer
         font-size: 32px
 </style>
