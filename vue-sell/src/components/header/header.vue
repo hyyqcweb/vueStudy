@@ -33,6 +33,7 @@
       <div class="detail-wrapper clearfix">
         <div class="detail-main">
           <h1 class="title">{{seller.name}}</h1>
+          <star :size="48" :score="seller.score"></star>
         </div>
       </div>
       <div class="detail-close" @click="closeDetail">
@@ -42,7 +43,11 @@
   </div>
 </template>
 <script>
+import star from '../star/star';
   export default {
+    components: {
+      star
+    },
     props: {
       seller: {
         type: Object
