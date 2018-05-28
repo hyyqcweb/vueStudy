@@ -35,7 +35,7 @@ export default {
   created () {
     axios.get('/api/seller')
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         // console.log(res.data.data.avatar);
         if (res.data.errno === ERR_OK) {
             this.seller = res.data.data;
